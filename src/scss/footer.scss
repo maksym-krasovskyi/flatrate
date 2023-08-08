@@ -2,8 +2,9 @@
 .footer {
   width: 100%;
   margin: 0;
+  background-color: #222222;
 }
-.footer__body {
+.footer__container {
   width: 100%;
   display: grid;
   grid-template-areas: "logo last-post contact instagram-post";
@@ -121,15 +122,19 @@
 
 .copyright {
   display: flex;
-  justify-content: space-between;
-  padding: 30px 40px 40px 40px;
+  justify-content: center;
   background-color: #191919;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 40px 0;
+  }
 }
 
 @media (max-width: 650px) {
   .copyright {
     flex-direction: column-reverse;
-    gap: 30px;
     align-items: center;
     justify-content: center;
   }

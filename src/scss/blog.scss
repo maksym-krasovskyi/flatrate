@@ -1,0 +1,138 @@
+//====================================================================================================
+.blog {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 120px;
+
+  // .blog__container
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  // .blog__posts
+  &__posts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+
+    @media (max-width: $mobileSmall) {
+      gap: 40px;
+    }
+  }
+
+  &__view {
+    text-align: center;
+    margin-top: rem(60);
+  }
+
+  &__all-btn {
+    @media (max-width: $mobile) {
+      padding: 16px 49px;
+    }
+  }
+}
+
+//====================================================================================================
+.post {
+  width: 370px;
+
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+
+  @media (max-width: $mobile) {
+    width: calc(100% / 2 - 12px);
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobileSmall) {
+    width: 100%;
+  }
+
+  // .post__img
+  &__img {
+    margin-bottom: 26px;
+    overflow: hidden;
+    height: 300px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease-in;
+
+      @media (any-hover: hover) {
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  // .post__title
+  &__title {
+    color: #000;
+    font-family: montserrat, Sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    @include multiline-clamp(1.2em, 2, 2.4em);
+  }
+
+  // .post__text
+  &__text {
+    color: #686868;
+    font-family: montserrat, Sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0 0 20px;
+
+    overflow: hidden;
+    @include multiline-clamp(1.2em, 3, 3.6em);
+  }
+  &__readMore {
+    max-width: 130px;
+    .read-more {
+      font-family: montserrat, Sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      fill: #bb945b;
+      color: #bb945b;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 16px;
+      gap: 6px;
+      i {
+        height: 12px;
+      }
+    }
+  }
+}
+
+//====================================================================================================
+
+.blog-page {
+  padding-top: 250px;
+  padding-bottom: 100px;
+
+  @media (max-width: $mobile) {
+    padding-top: 160px;
+  }
+
+  .post {
+    @media (max-width: $mobile) {
+      width: calc(100% / 2 - 12px);
+      margin: unset;
+    }
+
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+}
